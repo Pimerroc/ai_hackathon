@@ -71,6 +71,8 @@ docs/<issue>-<slug>
 - Squash merge, удалить source branch.
 - После merge — локальный compose smoke.
 
+> Сейчас CI/CD отключён на уровне проекта: в GitLab нет активных runners. До включения runner «Pipeline green» заменяется на локальные проверки + `glab ci lint`; #1 возвращает CI и убирает `workflow: rules: when: never`.
+
 ## Review SLA
 
 - 30 минут в рабочее время.

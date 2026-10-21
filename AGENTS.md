@@ -123,6 +123,7 @@ make verify-zip  # проверка распакованного архива
 - Ветки: `feat/<area>/<issue>-<slug>`, `fix/...`, `docs/...`.
 - Коммиты: Conventional Commits.
 - MR: ≤ 400 строк, 1 approval, зелёный pipeline, squash merge.
+- Сейчас CI/CD отключён на уровне проекта: нет активных GitLab runners. До включения runner quality gates запускаются локально; #1 включает CI обратно.
 - WIP limit: 1 активный issue на человека.
 - Review SLA: 30 минут.
 - Milestones: `M0 Foundation` … `M5 Submission`.
