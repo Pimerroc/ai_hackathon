@@ -1,0 +1,33 @@
+name: Mirror GitLab master
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mirror-gitlab-master
+  cancel-in-progress: true
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout GitHub mirror
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch GitLab master
+        run: |
+          git remote add gitlab https://gitlab.com/dimensia_squad/ai_hackathon.git
+          git fetch --prune gitlab master
+
+      - name: Sync master
+        run: |
+          git checkout -B master
+          git reset --hard gitlab/master
+          git push origin master --force
