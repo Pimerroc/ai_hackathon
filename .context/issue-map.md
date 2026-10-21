@@ -1,8 +1,9 @@
 # Карта issues
 
-Формат: **1 issue = 1 человек × 1 день**. Внутри issue — объединённые маленькие задачи. Старые мелкие issues закрыты как объединённые.
+Формат: **1 issue = 1 человек × 1 день**. Внутри issue — подробный бриф: роль, цель, контекст, шаги, артефакты, контракты, DoD, проверка, handoff и demo impact. Старые мелкие issues закрыты как объединённые.
 
 - GitLab: <https://gitlab.com/dimensia_squad/ai_hackathon/-/issues>
+- GitHub mirror: <https://github.com/Pimerroc/ai_hackathon>
 - Мастер-эпик: **#54**
 - Открытых задач: **30**
 
