@@ -41,7 +41,7 @@
 
 Без registry, build images, deploy, environments.
 
-> Сейчас в проекте нет активных GitLab runners. Автоматические pipelines отключены в `.gitlab-ci.yml` (`workflow: rules: when: never`), чтобы не создавать красные сборки. Конфиг готов; включить runner и убрать это правило в #1.
+> Сейчас в проекте нет активных GitLab runners, поэтому CI/CD отключён на уровне проекта (`builds_access_level=disabled`), а в `.gitlab-ci.yml` стоит `workflow: rules: when: never`. Конфиг готов; включить runner, вернуть `builds_access_level=enabled` и убрать правило в #1.
 
 ## Security gates
 
