@@ -1,3 +1,9 @@
+# GitLab shared runners are not available for this project (no active runners).
+# Keep the config ready for #1, but do not create failing pipelines until a runner is enabled.
+workflow:
+  rules:
+    - when: never
+
 stages:
   - validate
   - security

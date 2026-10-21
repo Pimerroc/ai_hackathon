@@ -41,6 +41,8 @@
 
 Без registry, build images, deploy, environments.
 
+> Сейчас в проекте нет активных GitLab runners. Автоматические pipelines отключены в `.gitlab-ci.yml` (`workflow: rules: when: never`), чтобы не создавать красные сборки. Конфиг готов; включить runner и убрать это правило в #1.
+
 ## Security gates
 
 - gitleaks: ключи, токены, `.env`.
