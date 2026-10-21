@@ -49,7 +49,7 @@
 Правила:
 
 - Нет кода без issue.
-- Один issue ≤ 4–6 часов; если больше — режем.
+- Один issue ≤ 8 часов; если больше — режем.
 - WIP limit: 1 активный issue на человека.
 - Перед началом: `status::in-progress`.
 - После MR: `status::review`.
@@ -88,7 +88,7 @@ docs/<issue>-<slug>
 
 ## DoR / DoD
 
-**Ready:** owner, acceptance, контракт, оценка ≤ 6 часов, понятен demo impact.
+**Ready:** owner, acceptance, контракт, оценка ≤ 8 часов, понятен demo impact.
 **Done:** код + тесты + review + pipeline green + local compose smoke + docs/ADR + demo-сценарий + issue закрыт.
 
 ## Что резать при отставании
