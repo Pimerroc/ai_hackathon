@@ -127,6 +127,8 @@ make verify-zip  # проверка распакованного архива
 - Review SLA: 30 минут.
 - Milestones: `M0 Foundation` … `M5 Submission`.
 - Labels: `type::`, `area::`, `priority::`, `status::`, `day::`.
+- Формат issue: подробный бриф — роль, дата, цель, результат, контекст, scope, пошаговый план, артефакты, контракты, DoD, проверка, зависимости/handoff, demo impact, ограничения/cut line, ссылки. Агент читает issue целиком.
+- GitHub mirror: <https://github.com/Pimerroc/ai_hackathon> (push mirror GitLab → GitHub).
 - Подробно: `.context/workflow.md`.
 
 ## 9. Границы, которые нельзя размывать

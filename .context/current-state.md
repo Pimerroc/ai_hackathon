@@ -10,6 +10,8 @@
 - Определён формат сдачи: ZIP + локальный Docker Compose, без hosted demo и deploy.
 - Зафиксировано: `DEMO_MODE=1` работает без ключа; ключ проверяющего не публикуем.
 - AX-Ray получил Developer-доступ в GitLab.
+- Все 30 issues содержат подробные брифы: роль, цель, контекст, шаги, артефакты, контракты, DoD, проверку, handoff и demo impact.
+- Настроен push mirror GitLab → GitHub: <https://github.com/Pimerroc/ai_hackathon>.
 
 ## Ещё не сделано
 
