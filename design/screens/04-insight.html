@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>04 · Инсайт, 6 блоков — Альфа-Инсайт</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="assets/screens.css">
+</head>
+<body>
+<!-- Маршрут: /insight/[id] · API: GET /events/{id}/insight, GET /sources/{id} -->
+<div class="app">
+  <header class="app-header">
+    <button class="icon-btn m-only" aria-label="Назад"><i class="ic ic-20 ic-back"></i></button>
+    <a class="brand" href="02-home.html"><span class="brand__mark" aria-hidden="true"></span><span class="brand__name">Альфа-Бизнес</span></a>
+    <span class="proto">Прототип · демо-данные</span>
+    <button class="switcher" aria-haspopup="listbox" aria-label="Компания: Восток-Металл">
+      <i class="ic ic-20 ic-building"></i>
+      <span class="grow"><span class="switcher__name">Восток-Металл</span><span class="switcher__meta">ИНН •••• 4417 · 4 компании в группе</span></span>
+      <i class="ic ic-down"></i>
+    </button>
+    <span class="spacer"></span>
+    <button class="icon-btn" aria-label="Уведомления"><i class="ic ic-20 ic-bell"></i><span class="dot"></span></button>
+    <div class="user"><span class="avatar">АК</span><span class="user__meta"><span class="user__name">Анна Ковалёва</span><span class="user__role">Финансовый директор</span></span></div>
+  </header>
+
+  <nav class="app-nav" aria-label="Разделы">
+    <div class="nav">
+      <a class="nav__item" href="02-home.html"><i class="ic ic-20 ic-home"></i>Главная</a>
+      <a class="nav__item is-active" href="03-feed.html" aria-current="page"><i class="ic ic-20 ic-sparkle"></i>Альфа-Инсайт<span class="nav__new">Новое</span></a>
+    </div>
+  </nav>
+
+  <main class="app-main">
+    <nav class="crumbs d-only" aria-label="Навигация"><a href="03-feed.html">Альфа-Инсайт</a><i class="ic ic-right"></i><a href="03-feed.html">Лента</a><i class="ic ic-right"></i><span>Инсайт</span></nav>
+
+    <div class="insight">
+      <article class="insight__main">
+        <!-- Шапка: вывод сверху -->
+        <header class="card ins-head">
+          <div class="event__top">
+            <span class="tag tag--risk"><i class="ic ic-risk"></i>Риск</span>
+            <span class="chip chip--type">Ключевая ставка</span>
+            <span class="event__time">Инсайт обновлён в 08:31</span>
+          </div>
+          <h1 class="t-h1">Банк России повысил ключевую ставку до 18% годовых</h1>
+          <div class="ins-head__meta">
+            <span class="row"><i class="ic ic-calendar"></i>20 октября, 13:30</span>
+            <span class="row"><i class="ic ic-news"></i>Банк России · пресс-релиз</span>
+            <span class="meter meter--high" title="0,82"><span class="meter__bars"><i></i><i></i><i></i></span>Уверенность: высокая</span>
+          </div>
+          <div class="ins-head__actions">
+            <a class="btn btn--primary d-only" href="05-chat.html"><i class="ic ic-chat"></i>Спросить по событию</a>
+            <a class="btn btn--secondary" href="06-trace-feedback.html"><i class="ic ic-trace"></i>Как получен вывод</a>
+            <a class="btn btn--ghost d-only" href="#"><i class="ic ic-external"></i>Первоисточник</a>
+          </div>
+          <div class="legend" aria-label="Метки происхождения">
+            <span>Метки:</span>
+            <span class="badge badge--fact"><i class="ic ic-fact"></i>Факт</span><span>подтверждено источником</span>
+            <span class="badge badge--bank"><i class="ic ic-quote"></i>Позиция Альфа-Банка</span><span>цитата</span>
+            <span class="badge badge--ai"><i class="ic ic-sparkle"></i>Вывод AI</span><span>интерпретация</span>
+            <span class="badge badge--estimate"><i class="ic ic-approx"></i>Оценка</span><span>расчёт с допущениями</span>
+          </div>
+        </header>
+
+        <!-- 1 -->
+        <section class="card block" id="b1" aria-labelledby="b1-t">
+          <div class="block__head"><span class="block__n">1</span><div><h2 id="b1-t" class="block__title">Что произошло</h2><p class="block__q">Факты, участники и сроки</p></div></div>
+          <ul class="claims">
+            <li class="claim">Совет директоров Банка России повысил ключевую ставку на 100 б.п. — с 17% до 18% годовых.<span class="claim__meta"><span class="badge badge--fact"><i class="ic ic-fact"></i>Факт</span><a class="src is-hover" href="#">1</a></span></li>
+            <li class="claim">Решение вступает в силу 21 октября; следующее заседание по ставке — 18 декабря.<span class="claim__meta"><span class="badge badge--fact"><i class="ic ic-fact"></i>Факт</span><a class="src" href="#">1</a></span></li>
+            <li class="claim">Регулятор объяснил решение устойчиво высокой инфляцией и ростом кредитования.<span class="claim__meta"><span class="badge badge--fact"><i class="ic ic-fact"></i>Факт</span><a class="src" href="#">1</a></span></li>
+            <li class="claim">Большинство аналитиков ожидали сохранения ставки — решение стало неожиданным для рынка.<span class="claim__meta"><span class="badge badge--fact"><i class="ic ic-fact"></i>Факт</span><a class="src" href="#">2</a></span></li>
+          </ul>
+          <div class="kv-line" style="margin-top:var(--space-4)"><span>Участники: Банк России</span><span>Даты: 20.10 — решение · 21.10 — вступает в силу · 18.12 — следующее заседание</span></div>
+        </section>
+
+        <!-- 2 -->
+        <section class="card block" id="b2" aria-labelledby="b2-t">
+          <div class="block__head"><span class="block__n">2</span><div><h2 id="b2-t" class="block__title">Почему это важно для «Восток-Металл»</h2><p class="block__q">Связь с финансами, продуктами и контрагентами компании</p></div></div>
+          <div class="features">
+            <div class="feature"><div class="feature__label">Кредиты с плавающей ставкой</div><div class="feature__value">9,2 млрд ₽</div><span class="badge badge--fact"><i class="ic ic-fact"></i>Факт</span> <a class="src" href="#">3</a></div>
+            <div class="feature"><div class="feature__label">Привязка ставки</div><div class="feature__value">КС + 2,5 п.п.</div><span class="badge badge--fact"><i class="ic ic-fact"></i>Факт</span> <a class="src" href="#">3</a></div>
+            <div class="feature"><div class="feature__label">Долг / EBITDA</div><div class="feature__value">≈ 2,1</div><span class="badge badge--estimate"><i class="ic ic-approx"></i>Оценка</span> <a class="src" href="#">3</a></div>
+          </div>
+          <h3 class="sub-title">Связь с событием</h3>
+          <ul class="claims">
+            <li class="claim">Ставка по кредитам компании привязана к ключевой, поэтому стоимость долга вырастет уже со следующего процентного периода.<span class="claim__meta"><span class="badge badge--ai"><i class="ic ic-sparkle"></i>Вывод AI</span><a class="src" href="#">1</a><a class="src" href="#">3</a></span></li>
+            <li class="claim">Высокая ставка обычно поддерживает рубль: для экспортёра с выручкой в USD и CNY это снижает рублёвую выручку.<span class="claim__meta"><span class="badge badge--ai"><i class="ic ic-sparkle"></i>Вывод AI</span><a class="src" href="#">4</a></span></li>
+          </ul>
+        </section>
+
+        <!-- 3 -->
+        <section class="card block" id="b3" aria-labelledby="b3-t">
+          <div class="block__head"><span class="block__n">3</span><div><h2 id="b3-t" class="block__title">Последствия</h2><p class="block__q">Риски и возможности, горизонт и уверенность</p></div></div>
+          <div class="impact-cols">
+            <div class="impact-col">
+              <span><span class="tag tag--risk"><i class="ic ic-risk"></i>Риски · 2</span></span>
+              <div class="impact-item impact-item--risk">
+                <p>Рост процентных расходов <b>≈ +92 млн ₽ в год</b> при текущем объёме долга</p>
+                <div class="impact-item__meta">
+                  <span class="badge badge--estimate"><i class="ic ic-approx"></i>Оценка</span>
+                  <span class="horizon"><i class="ic ic-clock"></i>до 3 мес</span>
+                  <span class="meter meter--high"><span class="meter__bars"><i></i><i></i><i></i></span>высокая</span>
+                </div>
+              </div>
+              <div class="impact-item impact-item--risk">
+                <p>Давление на ковенант Долг/EBITDA (порог 3,0), если одновременно укрепится рубль</p>
+                <div class="impact-item__meta">
+                  <span class="badge badge--ai"><i class="ic ic-sparkle"></i>Вывод AI</span>
+                  <span class="horizon"><i class="ic ic-clock"></i>3–12 мес</span>
+                  <span class="meter meter--mid"><span class="meter__bars"><i></i><i></i><i></i></span>средняя</span>
+                </div>
+              </div>
+            </div>
+            <div class="impact-col">
+              <span><span class="tag tag--opportunity"><i class="ic ic-opp"></i>Возможности · 1</span></span>
+              <div class="impact-item impact-item--opportunity">
+                <p>Доход от размещения свободной ликвидности вырастет — <b>≈ +18 млн ₽ в год</b> на остатке 1,8 млрд ₽</p>
+                <div class="impact-item__meta">
+                  <span class="badge badge--estimate"><i class="ic ic-approx"></i>Оценка</span>
+                  <span class="horizon"><i class="ic ic-clock"></i>до 3 мес</span>
+                  <span class="meter meter--mid"><span class="meter__bars"><i></i><i></i><i></i></span>средняя</span>
+                </div>
+              </div>
+              <div class="tooltip" role="tooltip" style="margin-top:4px">Допущение: остатки на счетах в среднем 1,8 млрд ₽ за последние 6 месяцев, ставка депозита растёт на 1 п.п.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4 -->
+        <section class="card block" id="b4" aria-labelledby="b4-t">
+          <div class="block__head"><span class="block__n">4</span><div><h2 id="b4-t" class="block__title">Что можно сделать</h2><p class="block__q">Направления действий и вопросы для обсуждения</p></div></div>
+          <ol class="actions-list">
+            <li class="action"><span class="prio prio--high">Высокий</span><p>Оценить долю портфеля с плавающей ставкой и обсудить с менеджером банка фиксацию ставки или процентный своп.<span class="claim__meta"><span class="badge badge--ai"><i class="ic ic-sparkle"></i>Вывод AI</span><a class="src" href="#">4</a></span></p></li>
+            <li class="action"><span class="prio prio--medium">Средний</span><p>Пересчитать ковенант Долг/EBITDA при ключевой ставке 18–20% на горизонте двух кварталов.<span class="claim__meta"><span class="badge badge--ai"><i class="ic ic-sparkle"></i>Вывод AI</span><a class="src" href="#">3</a></span></p></li>
+            <li class="action"><span class="prio prio--low">Низкий</span><p>Разместить временно свободную ликвидность на депозитах с фиксированной ставкой.<span class="claim__meta"><span class="badge badge--ai"><i class="ic ic-sparkle"></i>Вывод AI</span></span></p></li>
+          </ol>
+          <p class="disclaimer">Направления сформированы AI на основе профиля компании. Не является индивидуальной инвестиционной рекомендацией.</p>
+        </section>
+
+        <!-- 5 -->
+        <section class="card block" id="b5" aria-labelledby="b5-t">
+          <div class="block__head"><span class="block__n">5</span><div><h2 id="b5-t" class="block__title">Позиция Альфа-Банка</h2><p class="block__q">Экспертная оценка банка — дословно, со ссылкой на страницу</p></div></div>
+          <figure class="quote">
+            <i class="ic quote__mark ic-quote" aria-hidden="true"></i>
+            <blockquote class="quote__text">Мы ожидаем, что ключевая ставка останется на уровне 17–18% как минимум до середины 2027 года. Компаниям с высокой долей долга по плавающей ставке стоит заранее рассмотреть инструменты хеджирования процентного риска.</blockquote>
+            <figcaption class="quote__src">
+              <span class="badge badge--bank"><i class="ic ic-quote"></i>Позиция Альфа-Банка</span>
+              <span class="row"><i class="ic ic-doc"></i>Макроэкономический обзор, октябрь 2026 · стр. 7</span>
+              <a href="#" class="row">Открыть PDF <i class="ic ic-external"></i></a>
+            </figcaption>
+          </figure>
+          <p class="agree agree--yes" style="margin-top:var(--space-4)"><i class="ic ic-ok"></i>Согласуется с выводом AI: стоимость долга растёт, хеджирование актуально</p>
+        </section>
+
+        <!-- 6 -->
+        <section class="card block" id="b6" aria-labelledby="b6-t">
+          <div class="block__head"><span class="block__n">6</span><div><h2 id="b6-t" class="block__title">На чём основан вывод</h2><p class="block__q">Источники, данные о компании и шаги агента</p></div></div>
+          <ol class="sources">
+            <li><span class="src">1</span><i class="ic ic-news"></i><span><span class="t-small" style="font-weight:600;display:block">Банк России повысил ключевую ставку до 18%</span><span class="t-caption c-3">Пресс-релиз · 20 октября</span></span><a class="t-small" href="#">Открыть</a></li>
+            <li><span class="src">2</span><i class="ic ic-news"></i><span><span class="t-small" style="font-weight:600;display:block">Решение ЦБ стало неожиданностью для рынка</span><span class="t-caption c-3">Деловая пресса · 20 октября</span></span><a class="t-small" href="#">Открыть</a></li>
+            <li><span class="src">3</span><i class="ic ic-db"></i><span><span class="t-small" style="font-weight:600;display:block">Профиль компании: кредитный портфель и отчётность</span><span class="t-caption c-3">Данные банка · на 1 октября</span></span><a class="t-small" href="#">Открыть</a></li>
+            <li><span class="src">4</span><i class="ic ic-doc"></i><span><span class="t-small" style="font-weight:600;display:block">Макроэкономический обзор, октябрь 2026</span><span class="t-caption c-3">Аналитика Альфа-Банка · стр. 7</span></span><a class="t-small" href="#">Открыть</a></li>
+          </ol>
+          <h3 class="sub-title">Ограничения</h3>
+          <ul class="limits">
+            <li><i class="ic ic-alert"></i>Нет графика погашения кредитов — расходы посчитаны на текущий остаток долга.</li>
+            <li><i class="ic ic-alert"></i>Долг/EBITDA оценён по годовой отчётности за 2025 год.</li>
+          </ul>
+          <div class="run-summary">
+            <i class="ic ic-20 ic-trace c-2"></i>
+            <span class="grow"><span class="t-small" style="font-weight:600;display:block">Агент: 9 шагов · 4 инструмента · 1 исправление после самопроверки</span><span class="t-caption c-3">12,4 с · 18 430 токенов · уверенность 0,82</span></span>
+            <a class="btn btn--secondary btn--sm" href="06-trace-feedback.html">Как получен вывод</a>
+          </div>
+        </section>
+
+        <section class="card feedback" aria-labelledby="fb-t">
+          <div class="feedback__row">
+            <h2 id="fb-t" class="t-h3 grow">Полезен ли этот инсайт?</h2>
+            <button class="vote"><i class="ic ic-up"></i>Да</button>
+            <button class="vote"><i class="ic ic-downvote"></i>Нет</button>
+          </div>
+          <p class="t-caption c-3" style="margin-top:-8px">Оценка помогает точнее отбирать события для вашей компании</p>
+        </section>
+
+        <div class="m-only m-sticky"><a class="btn btn--primary btn--block" href="05-chat.html"><i class="ic ic-chat"></i>Спросить по событию</a></div>
+      </article>
+
+      <aside class="rail" aria-label="Навигация по инсайту">
+        <nav class="toc">
+          <a href="#b1" class="is-active"><span class="toc__n">1</span>Что произошло</a>
+          <a href="#b2"><span class="toc__n">2</span>Почему это важно</a>
+          <a href="#b3"><span class="toc__n">3</span>Последствия</a>
+          <a href="#b4"><span class="toc__n">4</span>Что можно сделать</a>
+          <a href="#b5"><span class="toc__n">5</span>Позиция Альфа-Банка</a>
+          <a href="#b6"><span class="toc__n">6</span>На чём основан вывод</a>
+        </nav>
+        <div class="card card--pad stack" style="padding:var(--space-5);gap:var(--space-3)">
+          <h2 class="t-h3 row"><i class="ic ic-chat" style="color:var(--color-ai)"></i>Спросить по событию</h2>
+          <button class="chip chip--suggest"><i class="ic ic-sparkle"></i>Сколько мы потеряем, если ставка дойдёт до 20%?</button>
+          <button class="chip chip--suggest"><i class="ic ic-sparkle"></i>Какие кредиты затронет первыми?</button>
+          <a class="btn btn--secondary btn--sm" href="05-chat.html">Задать свой вопрос</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+</div>
+</body>
+</html>

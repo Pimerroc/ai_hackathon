@@ -14,6 +14,8 @@
 - Настроен push mirror GitLab → GitHub: <https://github.com/Pimerroc/ai_hackathon>.
 - Fallback синхронизации: GitHub Actions `Mirror GitLab master` каждые 5 минут и ручной `git push github master`.
 
+- #7 (MR !1): `docs/product.md` (персоны, CJM, IA, flows), `design/tokens.json` + `design/tokens.css` (контраст проверяется `python design/tokens_tool.py check`), `design/ui-kit.md`, hi-fi экраны и состояния в `design/screens/` (HTML + PNG). Design review с krchvl проведён в !1: в sidebar только «Главная» и «Альфа-Инсайт», на главной вместо счетов — профиль компании. Открыты вопросы Q1–Q5 из `docs/product.md` (к Pimerroc).
+
 ## Ещё не сделано
 
 - В репозитории пока только шаблон GitLab CI-компонента; продуктовой структуры нет.

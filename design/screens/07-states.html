@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>07 · Состояния — Альфа-Инсайт</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="assets/screens.css">
+</head>
+<body>
+<main class="sheet">
+  <div class="sheet__head">
+    <div class="grow">
+      <h1 class="t-display">Состояния</h1>
+      <p class="c-2" style="margin-top:6px">Loading, empty, error, demo-mode и альтернативные пути A1–A8 из <code class="code">docs/product.md</code>. Каждое состояние — с текстом, который идёт в интерфейс.</p>
+    </div>
+    <span class="proto">Альфа-Инсайт · #7</span>
+  </div>
+
+  <div class="board">
+    <!-- Лента -->
+    <section class="frame">
+      <h2 class="frame__label">Лента · загрузка</h2>
+      <div class="card event" aria-busy="true">
+        <div class="event__top"><span class="sk sk--pill"></span><span class="sk sk--pill" style="width:110px"></span></div>
+        <span class="sk sk--title" style="width:90%"></span>
+        <span class="sk" style="width:70%"></span>
+        <div class="event__foot"><span class="sk" style="width:140px"></span><span class="sk" style="width:90px;margin-left:auto"></span></div>
+      </div>
+      <div class="card event" aria-busy="true">
+        <div class="event__top"><span class="sk sk--pill"></span><span class="sk sk--pill" style="width:80px"></span></div>
+        <span class="sk sk--title" style="width:75%"></span>
+        <span class="sk" style="width:60%"></span>
+      </div>
+      <p class="frame__note">Skeleton повторяет форму карточки. Через 10 с без ответа — «Загрузка дольше обычного».</p>
+    </section>
+
+    <section class="frame">
+      <h2 class="frame__label">Лента · пусто (A6)</h2>
+      <div class="card empty">
+        <span class="empty__icon"><i class="ic ic-check"></i></span>
+        <h3 class="t-h3">Сегодня нет событий, влияющих на «Восток-Металл»</h3>
+        <p class="t-small c-2">Мы проверили 214 новостей и 9 обзоров Альфа-Банка. Следующее обновление — в 12:00.</p>
+        <button class="btn btn--secondary btn--sm"><i class="ic ic-refresh"></i>Обновить</button>
+      </div>
+      <p class="frame__note">Пустая лента — это хорошая новость, а не ошибка: тон спокойный.</p>
+    </section>
+
+    <section class="frame">
+      <h2 class="frame__label">Лента · ошибка (A7)</h2>
+      <div class="card empty">
+        <span class="empty__icon empty__icon--error"><i class="ic ic-alert"></i></span>
+        <h3 class="t-h3">Не удалось загрузить ленту</h3>
+        <p class="t-small c-2">Сервис временно недоступен. Попробуйте ещё раз через минуту.</p>
+        <button class="btn btn--primary btn--sm"><i class="ic ic-refresh"></i>Повторить</button>
+        <p class="t-caption c-3">Код: <code class="code">FEED_UNAVAILABLE</code></p>
+      </div>
+      <p class="frame__note">Код ошибки берётся из <code class="code">error.code</code> ответа API.</p>
+    </section>
+
+    <!-- Режимы -->
+    <section class="frame">
+      <h2 class="frame__label">Баннер · <code class="code">DEMO_MODE=1</code> (A4)</h2>
+      <div class="banner banner--demo is-inline"><i class="ic ic-info"></i><span><b>Демо-режим.</b> Показаны заранее подготовленные инсайты, живые запросы к AI отключены.</span></div>
+      <p class="frame__note">Под header, на всю ширину, на всех экранах. Не закрывается.</p>
+    </section>
+
+    <section class="frame">
+      <h2 class="frame__label">Баннер · лимит бюджета (A3)</h2>
+      <div class="banner banner--warning is-inline"><i class="ic ic-alert"></i><span><b>Дневной лимит AI исчерпан — включён демо-режим.</b> Сброс в 03:00 МСК. Данные и ранее готовые инсайты доступны.</span></div>
+      <p class="frame__note">Ответ gateway <code class="code">BUDGET_EXCEEDED</code>. Не падаем, переключаемся на precomputed.</p>
+    </section>
+
+    <section class="frame">
+      <h2 class="frame__label">Баннер · нет связи с API</h2>
+      <div class="banner banner--error is-inline"><i class="ic ic-alert"></i><span class="grow"><b>Нет связи с сервером.</b> Показаны mock-данные.</span><button class="btn btn--secondary btn--sm">Повторить</button></div>
+      <p class="frame__note">Mock mode фронтенда (#12): явный бейдж, чтобы mock не приняли за живые данные.</p>
+    </section>
+
+    <!-- Инсайт -->
+    <section class="frame">
+      <h2 class="frame__label">Инсайт · готовится (A1)</h2>
+      <div class="card card--pad stack" aria-busy="true" style="gap:var(--space-3)">
+        <p class="status-line"><span class="spinner"></span>Агент готовит инсайт · обычно 10–20 с</p>
+        <ol class="tl" style="margin-top:var(--space-2)">
+          <li class="tl__step is-ok"><span class="tl__icon"><i class="ic ic-ok"></i></span><div class="tl__head"><span class="tl__name">План</span></div></li>
+          <li class="tl__step is-ok"><span class="tl__icon"><i class="ic ic-ok"></i></span><div class="tl__head"><span class="tl__name">Профиль компании и связи</span></div></li>
+          <li class="tl__step is-running"><span class="tl__icon"><span class="spinner"></span></span><div class="tl__head"><span class="tl__name">Ищу аналитику Альфа-Банка</span></div></li>
+          <li class="tl__step"><span class="tl__icon c-3"><i class="ic ic-clock"></i></span><div class="tl__head"><span class="tl__name c-3">Черновик и самопроверка</span></div></li>
+        </ol>
+      </div>
+      <p class="frame__note">Шаги — те же, что в trace: пользователь видит работу агента, а не просто спиннер.</p>
+    </section>
+
+    <section class="frame">
+      <h2 class="frame__label">Инсайт · мало данных (A2)</h2>
+      <div class="card ins-head">
+        <div class="event__top"><span class="tag tag--neutral"><i class="ic ic-minus"></i>Нейтрально</span><span class="chip chip--type">Регулирование</span></div>
+        <h3 class="t-h3">Минпромторг обсуждает требования к локализации металлоконструкций</h3>
+        <span class="meter meter--low"><span class="meter__bars"><i></i><i></i><i></i></span>Уверенность: низкая</span>
+        <div class="banner banner--warning is-inline"><i class="ic ic-alert"></i><span><b>Недостаточно данных для уверенного вывода.</b> Нет позиции Альфа-Банка по теме и данных о госзаказах компании.</span></div>
+        <div><a class="btn btn--secondary btn--sm" href="05-chat.html"><i class="ic ic-chat"></i>Спросить в чате</a></div>
+      </div>
+      <p class="frame__note">Карточка остаётся из 6 блоков; что именно отсутствует — в блоке 6 «Ограничения».</p>
+    </section>
+
+    <section class="frame">
+      <h2 class="frame__label">Позиция банка · расхождение (A5)</h2>
+      <div class="card card--pad">
+        <figure class="quote">
+          <i class="ic quote__mark ic-quote" aria-hidden="true"></i>
+          <blockquote class="quote__text" style="font-size:15px;line-height:23px">Мы допускаем начало снижения ключевой ставки уже в первом квартале 2027 года.</blockquote>
+          <figcaption class="quote__src"><span class="badge badge--bank"><i class="ic ic-quote"></i>Позиция Альфа-Банка</span><span>Долговой рынок · стр. 3</span></figcaption>
+        </figure>
+        <p class="agree agree--conflict" style="margin-top:var(--space-4)"><i class="ic ic-warn"></i>Расходится с выводом AI о долгом периоде высокой ставки</p>
+        <p class="t-caption c-3" style="margin-top:6px">Показываем обе позиции; уверенность инсайта понижена до средней.</p>
+      </div>
+      <p class="frame__note">Конфликт источников не прячем (требование <code class="code">.context/data.md</code>).</p>
+    </section>
+
+    <!-- Чат -->
+    <section class="frame">
+      <h2 class="frame__label">Чат · старт</h2>
+      <div class="card card--pad stack" style="gap:var(--space-3)">
+        <p class="t-small c-2">Задайте вопрос об этом событии. Агент ответит с опорой на инсайт, данные компании и аналитику банка.</p>
+        <button class="chip chip--suggest"><i class="ic ic-sparkle"></i>Сколько мы потеряем, если ставка дойдёт до 20%?</button>
+        <button class="chip chip--suggest is-hover"><i class="ic ic-sparkle"></i>Какие кредиты затронет первыми?</button>
+        <button class="chip chip--suggest"><i class="ic ic-sparkle"></i>Что советует Альфа-Банк?</button>
+        <div class="composer"><span class="composer__input">Спросите про это событие…</span><button class="send-btn is-disabled" disabled aria-label="Отправить"><i class="ic ic-20 ic-send"></i></button></div>
+      </div>
+    </section>
+
+    <section class="frame">
+      <h2 class="frame__label">Чат · ошибка (A8)</h2>
+      <div class="card card--pad msg-ai">
+        <div class="msg-ai__head"><span class="msg-ai__avatar"><i class="ic ic-sparkle"></i></span>Альфа-Инсайт · ответ AI</div>
+        <p>Аналитики банка рекомендуют компаниям с высокой долей плавающего долга рассмотреть</p>
+        <div class="banner banner--error is-inline"><i class="ic ic-alert"></i><span class="grow">Ответ прервался. Уже полученный текст сохранён.</span></div>
+        <div class="row"><button class="btn btn--secondary btn--sm"><i class="ic ic-refresh"></i>Повторить</button></div>
+      </div>
+      <p class="frame__note">SSE-событие <code class="code">error</code>: оставляем полученные токены, предлагаем повтор.</p>
+    </section>
+
+    <section class="frame">
+      <h2 class="frame__label">Чат · демо-режим</h2>
+      <div class="card card--pad stack" style="gap:var(--space-3)">
+        <div class="banner banner--demo is-inline"><i class="ic ic-info"></i><span>В демо-режиме доступны вопросы-подсказки с готовыми ответами.</span></div>
+        <button class="chip chip--suggest"><i class="ic ic-sparkle"></i>Сколько мы потеряем, если ставка дойдёт до 20%?</button>
+        <button class="chip chip--suggest"><i class="ic ic-sparkle"></i>Что советует Альфа-Банк?</button>
+        <div class="composer" style="background:var(--color-surface-subtle);border-color:var(--color-border)"><span class="composer__input" style="color:var(--color-text-disabled)">Свободный ввод недоступен в демо-режиме</span><button class="send-btn is-disabled" disabled aria-label="Отправить"><i class="ic ic-20 ic-send"></i></button></div>
+      </div>
+      <p class="frame__note">Предложение Q1 в <code class="code">docs/product.md</code> — к согласованию с Pimerroc.</p>
+    </section>
+
+    <!-- Источник, feedback, trace -->
+    <section class="frame">
+      <h2 class="frame__label">Drawer · источник</h2>
+      <div class="card" style="overflow:hidden">
+        <div class="panel__head" style="padding-left:var(--space-5)"><span class="src">4</span><h3 class="panel__title grow">Источник</h3><button class="icon-btn icon-btn--sm" aria-label="Закрыть"><i class="ic ic-20 ic-x"></i></button></div>
+        <div class="stack" style="padding:var(--space-5);gap:var(--space-3)">
+          <div><p class="t-strong">Макроэкономический обзор, октябрь 2026</p><p class="t-caption c-3">Аналитика Альфа-Банка · PDF · стр. 7</p></div>
+          <figure class="quote"><blockquote class="quote__text" style="font-size:15px;line-height:23px">Мы ожидаем, что ключевая ставка останется на уровне 17–18% как минимум до середины 2027 года.</blockquote></figure>
+          <p class="t-caption c-3 row"><i class="ic ic-12 ic-check"></i>Цитата приведена дословно</p>
+          <a class="btn btn--secondary btn--sm" href="#"><i class="ic ic-external"></i>Открыть PDF на стр. 7</a>
+        </div>
+      </div>
+      <p class="frame__note">Контракт: <code class="code">{title, url, quote, page, type}</code> из <code class="code">GET /sources/{id}</code>.</p>
+    </section>
+
+    <section class="frame">
+      <h2 class="frame__label">Feedback · отправлен</h2>
+      <div class="card feedback">
+        <div class="feedback__row"><i class="ic ic-20 ic-ok" style="color:var(--color-opportunity)"></i><p class="t-strong grow">Спасибо! Учтём при отборе событий для вашей компании</p></div>
+        <p class="t-caption c-3">Вы отметили: неточная позиция банка</p>
+      </div>
+    </section>
+
+    <section class="frame">
+      <h2 class="frame__label">Trace · ошибка шага</h2>
+      <div class="card card--pad">
+        <ol class="tl">
+          <li class="tl__step is-fail"><span class="tl__icon"><i class="ic ic-fail"></i></span><div>
+            <div class="tl__head"><span class="tl__name">Инструмент</span><code class="code">search_bank_analytics</code><span class="tl__ms">5,0 с</span></div>
+            <div class="tl__body" style="background:var(--color-danger-subtle)"><span>Таймаут — повтор через fallback-модель</span></div>
+          </div></li>
+          <li class="tl__step is-ok"><span class="tl__icon"><i class="ic ic-ok"></i></span><div>
+            <div class="tl__head"><span class="tl__name">Повтор</span><code class="code">search_bank_analytics</code><span class="tl__ms">790 мс</span></div>
+          </div></li>
+        </ol>
+      </div>
+      <p class="frame__note">Статусы шага: ok · warn · fail · running.</p>
+    </section>
+  </div>
+</main>
+</body>
+</html>

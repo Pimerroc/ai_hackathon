@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>08 · Mobile 390 — Альфа-Инсайт</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="assets/screens.css">
+<style>
+  .phones { display: flex; gap: var(--space-8); flex-wrap: wrap; }
+  .phone { width: 390px; height: 844px; border: 1px solid var(--color-border-strong); border-radius: 28px; overflow: hidden; background: var(--color-bg); box-shadow: var(--shadow-popover); }
+  .phone iframe { width: 100%; height: 100%; border: 0; display: block; }
+</style>
+</head>
+<body>
+<main class="sheet">
+  <div class="sheet__head">
+    <div class="grow">
+      <h1 class="t-display">Mobile · 390</h1>
+      <p class="c-2" style="margin-top:6px">Те же страницы при ширине &lt; 768px. Sidebar скрыт, профиль компании — под лентой, «Спросить по событию» закреплена внизу, чат и trace — лист снизу. Tablet — P1.</p>
+    </div>
+    <span class="proto">Альфа-Инсайт · #7</span>
+  </div>
+  <div class="phones">
+    <div class="frame"><h2 class="frame__label">Лента</h2><div class="phone"><iframe src="03-feed.html" title="Лента, mobile"></iframe></div></div>
+    <div class="frame"><h2 class="frame__label">Инсайт</h2><div class="phone"><iframe src="04-insight.html" title="Инсайт, mobile"></iframe></div></div>
+    <div class="frame"><h2 class="frame__label">Чат — лист снизу</h2><div class="phone"><iframe src="05-chat.html" title="Чат, mobile"></iframe></div></div>
+  </div>
+</main>
+</body>
+</html>

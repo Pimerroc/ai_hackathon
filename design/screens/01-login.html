@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>01 · Демо-вход — Альфа-Инсайт</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="assets/screens.css">
+</head>
+<body class="login">
+<!-- Маршрут: /login · API: POST /auth/mock-login, GET /clients -->
+<main class="login__wrap">
+  <div class="row" style="gap:12px">
+    <span class="brand"><span class="brand__mark" aria-hidden="true"></span>Альфа-Бизнес</span>
+    <span class="proto">Прототип</span>
+  </div>
+
+  <div class="card card--pad login__card">
+    <div>
+      <h1 class="t-h1">Демо-вход</h1>
+      <p class="c-2" style="margin-top:6px">Выберите роль — лента и инсайты подстроятся под компанию и задачи пользователя.</p>
+    </div>
+
+    <div class="personas" role="radiogroup" aria-label="Демо-роль">
+      <label class="persona is-selected" role="radio" aria-checked="true">
+        <span class="avatar avatar--lg">АК</span>
+        <span>
+          <span class="t-strong">Анна Ковалёва · финансовый директор</span>
+          <span class="persona__company" style="display:block">«Восток-Металл» — металлургия, экспорт, кредиты</span>
+          <span class="chips"><span class="chip chip--type">Ставка</span><span class="chip chip--type">Курс</span><span class="chip chip--type">Пошлины</span></span>
+        </span>
+        <span class="radio" aria-hidden="true"></span>
+      </label>
+      <label class="persona is-hover" role="radio" aria-checked="false">
+        <span class="avatar avatar--lg" style="background:var(--color-opportunity-subtle);color:var(--color-opportunity)">ДО</span>
+        <span>
+          <span class="t-strong">Дмитрий Орлов · руководитель казначейства</span>
+          <span class="persona__company" style="display:block">«Город-Маркет» — ритейл, импорт, платежи в CNY</span>
+          <span class="chips"><span class="chip chip--type">Курс</span><span class="chip chip--type">Логистика</span><span class="chip chip--type">Поставщики</span></span>
+        </span>
+        <span class="radio" aria-hidden="true"></span>
+      </label>
+      <label class="persona" role="radio" aria-checked="false">
+        <span class="avatar avatar--lg" style="background:var(--color-ai-subtle);color:var(--color-ai)">СБ</span>
+        <span>
+          <span class="t-strong">Сергей Белов · собственник</span>
+          <span class="persona__company" style="display:block">ГК «Опора-Строй» — девелопмент, 6 компаний, гарантии</span>
+          <span class="chips"><span class="chip chip--type">Контрагенты</span><span class="chip chip--type">Ипотека</span><span class="chip chip--type">Ставка</span></span>
+        </span>
+        <span class="radio" aria-hidden="true"></span>
+      </label>
+    </div>
+
+    <a class="btn btn--primary btn--block" href="02-home.html">Войти как Анна Ковалёва</a>
+    <p class="t-caption c-3">Демо-аккаунты без пароля. Компании, люди и цифры вымышлены.</p>
+  </div>
+</main>
+</body>
+</html>
