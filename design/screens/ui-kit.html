@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UI kit — Альфа-Инсайт</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="assets/screens.css">
+</head>
+<body>
+<main class="sheet">
+  <div class="sheet__head">
+    <div class="grow">
+      <h1 class="t-display">UI kit</h1>
+      <p class="c-2" style="margin-top:6px">Компоненты на токенах <code class="code">design/tokens.json</code>. Спецификация и маппинг на React — в <code class="code">design/ui-kit.md</code>.</p>
+    </div>
+    <span class="proto">Альфа-Инсайт · #7</span>
+  </div>
+
+  <section class="kit-section">
+    <h2 class="t-h2">Цвет</h2>
+    <p class="t-small c-2">Контраст проверен <code class="code">python design/tokens_tool.py check</code>: весь текст ≥ 4,5:1, элементы интерфейса ≥ 3:1.</p>
+    <div class="swatches">
+      <div class="swatch"><div class="swatch__color" style="background:var(--color-bg)"></div><div class="swatch__meta"><b class="t-small">color.bg</b><span class="t-caption c-3">#F3F4F6</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--color-surface)"></div><div class="swatch__meta"><b class="t-small">color.surface</b><span class="t-caption c-3">#FFFFFF</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--color-text)"></div><div class="swatch__meta"><b class="t-small">color.text</b><span class="t-caption c-3">#0B1F35 · 16,7:1</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--color-text-secondary)"></div><div class="swatch__meta"><b class="t-small">color.text-secondary</b><span class="t-caption c-3">#4B5868 · 7,3:1</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--color-text-tertiary)"></div><div class="swatch__meta"><b class="t-small">color.text-tertiary</b><span class="t-caption c-3">#5F6B7A · 4,9:1 на bg</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--color-border)"></div><div class="swatch__meta"><b class="t-small">color.border</b><span class="t-caption c-3">#DCE0E5</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--color-accent)"></div><div class="swatch__meta"><b class="t-small">color.accent</b><span class="t-caption c-3">#EF3124 · не для текста</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--color-action)"></div><div class="swatch__meta"><b class="t-small">color.action</b><span class="t-caption c-3">#D31F12 · 5,3:1</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--color-focus)"></div><div class="swatch__meta"><b class="t-small">color.focus</b><span class="t-caption c-3">#1F6FEB · 4,2:1</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--color-link)"></div><div class="swatch__meta"><b class="t-small">color.link</b><span class="t-caption c-3">#1557C0 · 6,7:1</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--color-danger)"></div><div class="swatch__meta"><b class="t-small">color.danger</b><span class="t-caption c-3">#C42318 · ошибки</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--color-info)"></div><div class="swatch__meta"><b class="t-small">color.info</b><span class="t-caption c-3">#1557C0 · демо-режим</span></div></div>
+    </div>
+    <h3 class="sub-title">Семантика инсайта: текст / фон · контраст</h3>
+    <div class="swatches">
+      <div class="swatch"><div class="swatch__color" style="background:var(--color-risk-subtle);border-bottom:4px solid var(--color-risk)"></div><div class="swatch__meta"><b class="t-small">color.risk</b><span class="t-caption c-3">#B4400A · 5,2:1</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--color-opportunity-subtle);border-bottom:4px solid var(--color-opportunity)"></div><div class="swatch__meta"><b class="t-small">color.opportunity</b><span class="t-caption c-3">#0C7438 · 5,3:1</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--color-fact-subtle);border-bottom:4px solid var(--color-fact)"></div><div class="swatch__meta"><b class="t-small">color.fact</b><span class="t-caption c-3">#265A8D · 6,3:1</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--color-bank-subtle);border-bottom:4px solid var(--color-bank)"></div><div class="swatch__meta"><b class="t-small">color.bank</b><span class="t-caption c-3">#BF190D · 5,6:1</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--color-ai-subtle);border-bottom:4px solid var(--color-ai)"></div><div class="swatch__meta"><b class="t-small">color.ai</b><span class="t-caption c-3">#6337C2 · 6,4:1</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--color-estimate-subtle);border-bottom:4px dashed var(--color-estimate)"></div><div class="swatch__meta"><b class="t-small">color.estimate</b><span class="t-caption c-3">#875100 · 6,0:1</span></div></div>
+    </div>
+  </section>
+
+  <section class="kit-section">
+    <h2 class="t-h2">Типографика</h2>
+    <p class="t-small c-2">Inter в прототипе (OFL, кириллица); в проде — фирменный шрифт. Цифры — tabular-nums.</p>
+    <div class="card card--pad stack" style="gap:var(--space-3)">
+      <div class="row" style="gap:24px"><code class="code" style="width:150px">typography.display</code><span class="t-display">Альфа-Инсайт</span><span class="t-caption c-3">32/40 · 700</span></div>
+      <div class="row" style="gap:24px"><code class="code" style="width:150px">typography.h1</code><span class="t-h1">Банк России повысил ставку</span><span class="t-caption c-3">26/34 · 700</span></div>
+      <div class="row" style="gap:24px"><code class="code" style="width:150px">typography.h2</code><span class="t-h2">Что произошло</span><span class="t-caption c-3">20/28 · 600</span></div>
+      <div class="row" style="gap:24px"><code class="code" style="width:150px">typography.h3</code><span class="t-h3">Заголовок карточки ленты</span><span class="t-caption c-3">17/24 · 600</span></div>
+      <div class="row" style="gap:24px"><code class="code" style="width:150px">typography.body</code><span class="t-body">Рост процентных расходов ≈ +92 млн ₽ в год</span><span class="t-caption c-3">15/22 · 400</span></div>
+      <div class="row" style="gap:24px"><code class="code" style="width:150px">typography.small</code><span class="t-small">Почему в ленте: кредиты с плавающей ставкой</span><span class="t-caption c-3">13/18 · 400</span></div>
+      <div class="row" style="gap:24px"><code class="code" style="width:150px">typography.caption</code><span class="t-caption">Банк России · пресс-релиз · 08:12</span><span class="t-caption c-3">12/16 · 500</span></div>
+      <div class="row" style="gap:24px"><code class="code" style="width:150px">typography.label</code><span class="t-label">ФАКТ · ВЫВОД AI</span><span class="t-caption c-3">12/16 · 600</span></div>
+      <div class="row" style="gap:24px"><code class="code" style="width:150px">typography.mono</code><span class="t-mono">run_7f3a91c2 · z-ai/glm-5.3-flash</span><span class="t-caption c-3">12/18 · mono</span></div>
+    </div>
+  </section>
+
+  <section class="kit-section">
+    <h2 class="t-h2">Отступы, радиусы, тени</h2>
+    <p class="t-small c-2">Шаг 4px, индекс как в Tailwind: <code class="code">space.4</code> = 16px.</p>
+    <div class="kit-row" style="align-items:flex-end;margin-bottom:var(--space-6)">
+      <div class="stack" style="gap:6px;justify-items:center"><span style="display:block;width:4px;height:4px;background:var(--color-ai)"></span><span class="t-caption c-3">1 · 4</span></div>
+      <div class="stack" style="gap:6px;justify-items:center"><span style="display:block;width:8px;height:8px;background:var(--color-ai)"></span><span class="t-caption c-3">2 · 8</span></div>
+      <div class="stack" style="gap:6px;justify-items:center"><span style="display:block;width:12px;height:12px;background:var(--color-ai)"></span><span class="t-caption c-3">3 · 12</span></div>
+      <div class="stack" style="gap:6px;justify-items:center"><span style="display:block;width:16px;height:16px;background:var(--color-ai)"></span><span class="t-caption c-3">4 · 16</span></div>
+      <div class="stack" style="gap:6px;justify-items:center"><span style="display:block;width:20px;height:20px;background:var(--color-ai)"></span><span class="t-caption c-3">5 · 20</span></div>
+      <div class="stack" style="gap:6px;justify-items:center"><span style="display:block;width:24px;height:24px;background:var(--color-ai)"></span><span class="t-caption c-3">6 · 24</span></div>
+      <div class="stack" style="gap:6px;justify-items:center"><span style="display:block;width:32px;height:32px;background:var(--color-ai)"></span><span class="t-caption c-3">8 · 32</span></div>
+      <div class="stack" style="gap:6px;justify-items:center"><span style="display:block;width:48px;height:48px;background:var(--color-ai)"></span><span class="t-caption c-3">12 · 48</span></div>
+      <div class="stack" style="gap:6px;justify-items:center"><span style="display:block;width:64px;height:64px;background:var(--color-ai)"></span><span class="t-caption c-3">16 · 64</span></div>
+    </div>
+    <div class="kit-row" style="gap:var(--space-6)">
+      <div class="stack" style="gap:6px"><span class="card" style="display:block;width:96px;height:64px;border-radius:var(--radius-sm)"></span><span class="t-caption c-3">radius.sm · 6</span></div>
+      <div class="stack" style="gap:6px"><span class="card" style="display:block;width:96px;height:64px;border-radius:var(--radius-md)"></span><span class="t-caption c-3">radius.md · 10</span></div>
+      <div class="stack" style="gap:6px"><span class="card" style="display:block;width:96px;height:64px;border-radius:var(--radius-control)"></span><span class="t-caption c-3">radius.control · 12</span></div>
+      <div class="stack" style="gap:6px"><span class="card" style="display:block;width:96px;height:64px;border-radius:var(--radius-card)"></span><span class="t-caption c-3">radius.card · 16</span></div>
+      <div class="stack" style="gap:6px"><span class="card" style="display:block;width:96px;height:64px;border-radius:var(--radius-panel)"></span><span class="t-caption c-3">radius.panel · 20</span></div>
+      <div class="stack" style="gap:6px"><span style="display:block;width:120px;height:64px;border-radius:var(--radius-card);background:var(--color-surface);box-shadow:var(--shadow-card)"></span><span class="t-caption c-3">shadow.card</span></div>
+      <div class="stack" style="gap:6px"><span style="display:block;width:120px;height:64px;border-radius:var(--radius-card);background:var(--color-surface);box-shadow:var(--shadow-raised)"></span><span class="t-caption c-3">shadow.raised</span></div>
+      <div class="stack" style="gap:6px"><span style="display:block;width:120px;height:64px;border-radius:var(--radius-card);background:var(--color-surface);box-shadow:var(--shadow-popover)"></span><span class="t-caption c-3">shadow.popover</span></div>
+    </div>
+  </section>
+
+  <section class="kit-section">
+    <h2 class="t-h2">Кнопки</h2>
+    <p class="t-small c-2">Высота 44 (sm — 36). Primary — одна на экран. Фокус — кольцо 2px <code class="code">color.focus</code> с отступом 2px.</p>
+    <div class="kit-grid">
+      <span></span><span class="t-caption">Default</span><span class="t-caption">Hover</span><span class="t-caption">Pressed</span><span class="t-caption">Focus</span><span class="t-caption">Disabled</span><span class="t-caption">Loading</span>
+      <span class="t-small" style="font-weight:600">Primary</span>
+      <span><button class="btn btn--primary">Спросить</button></span><span><button class="btn btn--primary is-hover">Спросить</button></span><span><button class="btn btn--primary is-active">Спросить</button></span><span><button class="btn btn--primary is-focus">Спросить</button></span><span><button class="btn btn--primary" disabled>Спросить</button></span><span><button class="btn btn--primary" aria-busy="true"><span class="spinner"></span>Отправка</button></span>
+      <span class="t-small" style="font-weight:600">Secondary</span>
+      <span><button class="btn btn--secondary">Trace</button></span><span><button class="btn btn--secondary is-hover">Trace</button></span><span><button class="btn btn--secondary" style="background:var(--color-surface-pressed)">Trace</button></span><span><button class="btn btn--secondary is-focus">Trace</button></span><span><button class="btn btn--secondary" disabled>Trace</button></span><span><button class="btn btn--secondary" aria-busy="true"><span class="spinner"></span>Загрузка</button></span>
+      <span class="t-small" style="font-weight:600">Ghost</span>
+      <span><button class="btn btn--ghost">Отмена</button></span><span><button class="btn btn--ghost is-hover">Отмена</button></span><span><button class="btn btn--ghost" style="background:var(--color-surface-pressed)">Отмена</button></span><span><button class="btn btn--ghost is-focus">Отмена</button></span><span><button class="btn btn--ghost" disabled>Отмена</button></span><span><button class="btn btn--ghost is-error"><i class="ic ic-alert"></i>Ошибка</button></span>
+    </div>
+  </section>
+
+  <section class="kit-section">
+    <h2 class="t-h2">Метки происхождения и влияние</h2>
+    <p class="t-small c-2"><code class="code">EvidenceBadge</code>: fact · bank · AI · estimate. Всегда иконка + текст. Hover/клик — подсказка с источником или допущением.</p>
+    <div class="kit-row" style="margin-bottom:var(--space-5)">
+      <span class="badge badge--fact"><i class="ic ic-fact"></i>Факт</span>
+      <span class="badge badge--bank"><i class="ic ic-quote"></i>Позиция Альфа-Банка</span>
+      <span class="badge badge--ai"><i class="ic ic-sparkle"></i>Вывод AI</span>
+      <span class="badge badge--estimate"><i class="ic ic-approx"></i>Оценка</span>
+      <span class="badge badge--estimate is-hover"><i class="ic ic-approx"></i>Оценка · hover</span>
+      <span class="badge badge--fact is-focus"><i class="ic ic-fact"></i>Факт · focus</span>
+      <span class="tooltip" style="margin-left:var(--space-4)">Допущение: остаток долга 9,2 млрд ₽, ставка растёт на 1 п.п.</span>
+    </div>
+    <div class="kit-row" style="margin-bottom:var(--space-5)">
+      <span class="tag tag--risk"><i class="ic ic-risk"></i>Риск</span>
+      <span class="tag tag--opportunity"><i class="ic ic-opp"></i>Возможность</span>
+      <span class="tag tag--neutral"><i class="ic ic-minus"></i>Нейтрально</span>
+      <span class="prio prio--high">Высокий</span><span class="prio prio--medium">Средний</span><span class="prio prio--low">Низкий</span>
+      <span class="horizon t-caption c-2"><i class="ic ic-clock"></i>до 3 мес</span><span class="horizon t-caption c-2"><i class="ic ic-clock"></i>3–12 мес</span><span class="horizon t-caption c-2"><i class="ic ic-clock"></i>более 12 мес</span>
+    </div>
+    <div class="kit-row">
+      <span class="meter meter--high"><span class="meter__bars"><i></i><i></i><i></i></span>Уверенность: высокая · ≥ 0,75</span>
+      <span class="meter meter--mid"><span class="meter__bars"><i></i><i></i><i></i></span>средняя · 0,5–0,75</span>
+      <span class="meter meter--low"><span class="meter__bars"><i></i><i></i><i></i></span>низкая · &lt; 0,5</span>
+      <a class="src" href="#">1</a><a class="src is-hover" href="#">2</a>
+      <a class="source-chip" href="#"><span class="src">4</span><b>Макрообзор, октябрь 2026</b>· стр. 7</a>
+      <a class="source-chip is-hover" href="#"><span class="src">3</span><b>Профиль компании</b></a>
+    </div>
+  </section>
+
+  <section class="kit-section">
+    <h2 class="t-h2">Чипы, вкладки, поля</h2>
+    <div class="kit-row" style="margin-bottom:var(--space-5)">
+      <button class="chip">Default</button><button class="chip is-hover">Hover</button><button class="chip is-selected">Selected</button><button class="chip is-focus">Focus</button><button class="chip is-disabled" disabled>Disabled</button>
+      <span class="chip chip--type">Ключевая ставка</span>
+      <button class="chip chip--suggest" style="max-width:300px"><i class="ic ic-sparkle"></i>Сколько мы потеряем, если ставка дойдёт до 20%?</button>
+    </div>
+    <div class="kit-row" style="margin-bottom:var(--space-5)">
+      <div class="tabs"><button class="tabs__item is-active">Все <span class="tabs__count">12</span></button><button class="tabs__item is-hover">Риски <span class="tabs__count">5</span></button><button class="tabs__item">Возможности <span class="tabs__count">4</span></button></div>
+    </div>
+    <div class="board" style="grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-4)">
+      <div><div class="field"><i class="ic ic-search"></i>Поиск по ленте</div><p class="field-hint">Default</p></div>
+      <div><div class="field is-focus"><i class="ic ic-search"></i>ставка|</div><p class="field-hint">Focus</p></div>
+      <div><div class="field is-error"><i class="ic ic-search"></i>Слишком длинный запрос</div><p class="field-hint is-error">Error: до 200 символов</p></div>
+      <div><div class="field is-disabled"><i class="ic ic-search"></i>Недоступно</div><p class="field-hint">Disabled</p></div>
+    </div>
+  </section>
+
+  <section class="kit-section">
+    <h2 class="t-h2">Баннеры, карточки, состояния</h2>
+    <div class="board" style="gap:var(--space-4)">
+      <div class="banner banner--demo is-inline"><i class="ic ic-info"></i><span><b>Демо-режим.</b> Живые запросы к AI отключены.</span></div>
+      <div class="banner banner--warning is-inline"><i class="ic ic-alert"></i><span><b>Лимит AI исчерпан.</b> Сброс в 03:00 МСК.</span></div>
+      <div class="banner banner--error is-inline"><i class="ic ic-alert"></i><span><b>Нет связи с сервером.</b> Показаны mock-данные.</span></div>
+    </div>
+    <div class="board" style="margin-top:var(--space-5);gap:var(--space-4)">
+      <div class="frame"><h3 class="frame__label">Карточка · default</h3>
+        <div class="card event"><div class="event__top"><span class="tag tag--risk"><i class="ic ic-risk"></i>Риск</span><span class="event__time">08:12</span></div><p class="event__title">Банк России повысил ставку до 18%</p><p class="why"><i class="ic ic-target"></i><span>Кредиты <b>9,2 млрд ₽</b> с плавающей ставкой</span></p></div></div>
+      <div class="frame"><h3 class="frame__label">Карточка · hover + unread</h3>
+        <div class="card card--link event is-hover is-unread"><div class="event__top"><span class="tag tag--opportunity"><i class="ic ic-opp"></i>Возможность</span><span class="event__time">07:40</span></div><p class="event__title">Пошлины не продлят на 2027 год</p><p class="why"><i class="ic ic-target"></i><span><b>58% выручки</b> — экспорт</span></p></div></div>
+      <div class="frame"><h3 class="frame__label">Карточка · loading</h3>
+        <div class="card event" aria-busy="true"><div class="event__top"><span class="sk sk--pill"></span></div><span class="sk sk--title" style="width:85%"></span><span class="sk" style="width:60%"></span></div></div>
+    </div>
+  </section>
+
+  <section class="kit-section">
+    <h2 class="t-h2">Чат и trace</h2>
+    <div class="board" style="gap:var(--space-4)">
+      <div class="card card--pad stack" style="gap:var(--space-3)">
+        <p class="msg-user">Сколько мы потеряем при ставке 20%?</p>
+        <div class="msg-ai"><div class="msg-ai__head"><span class="msg-ai__avatar"><i class="ic ic-sparkle"></i></span>Альфа-Инсайт · ответ AI</div><p>Расходы вырастут примерно на <b>276 млн ₽ в год</b>. <span class="badge badge--estimate"><i class="ic ic-approx"></i>Оценка</span> <a class="src" href="#">3</a></p></div>
+      </div>
+      <div class="card card--pad stack" style="gap:var(--space-3)">
+        <div class="thinking"><div class="thinking__head"><i class="ic ic-trace"></i>Агент выполнил 2 шага<i class="ic ic-down"></i></div><ol><li><i class="ic ic-12 ic-check"></i>Взял профиль компании</li><li><i class="ic ic-12 ic-check"></i>Нашёл аналитику банка</li></ol></div>
+        <p class="status-line"><span class="spinner"></span>Ищу в аналитике Альфа-Банка…</p>
+        <p>Аналитики рекомендуют рассмотреть<span class="caret"></span></p>
+      </div>
+      <div class="card card--pad">
+        <ol class="tl">
+          <li class="tl__step is-ok"><span class="tl__icon"><i class="ic ic-ok"></i></span><div class="tl__head"><span class="tl__name">ok</span><code class="code">search_news</code><span class="tl__ms">640 мс</span></div></li>
+          <li class="tl__step is-warn"><span class="tl__icon"><i class="ic ic-warn"></i></span><div class="tl__head"><span class="tl__name">warn · самопроверка</span><span class="tl__ms">2,3 с</span></div></li>
+          <li class="tl__step is-fail"><span class="tl__icon"><i class="ic ic-fail"></i></span><div class="tl__head"><span class="tl__name">fail · таймаут</span><span class="tl__ms">5,0 с</span></div></li>
+          <li class="tl__step is-running"><span class="tl__icon"><span class="spinner"></span></span><div class="tl__head"><span class="tl__name">running</span></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

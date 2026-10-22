@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>02 · Главная, точка входа — Альфа-Инсайт</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="assets/screens.css">
+</head>
+<body>
+<!-- Маршрут: / · API: GET /clients/{id}/profile, GET /clients/{id}/feed?page_size=3 -->
+<div class="app">
+  <header class="app-header">
+    <button class="icon-btn m-only" aria-label="Меню"><i class="ic ic-20 ic-menu"></i></button>
+    <a class="brand" href="02-home.html"><span class="brand__mark" aria-hidden="true"></span><span class="brand__name">Альфа-Бизнес</span></a>
+    <span class="proto">Прототип · демо-данные</span>
+    <button class="switcher" aria-haspopup="listbox" aria-label="Компания: Восток-Металл">
+      <i class="ic ic-20 ic-building"></i>
+      <span class="grow"><span class="switcher__name">Восток-Металл</span><span class="switcher__meta">ИНН •••• 4417 · 4 компании в группе</span></span>
+      <i class="ic ic-down"></i>
+    </button>
+    <span class="spacer"></span>
+    <button class="icon-btn" aria-label="Уведомления"><i class="ic ic-20 ic-bell"></i><span class="dot"></span></button>
+    <div class="user"><span class="avatar">АК</span><span class="user__meta"><span class="user__name">Анна Ковалёва</span><span class="user__role">Финансовый директор</span></span></div>
+  </header>
+
+  <nav class="app-nav" aria-label="Разделы">
+    <div class="nav">
+      <a class="nav__item is-active" href="02-home.html" aria-current="page"><i class="ic ic-20 ic-home"></i>Главная</a>
+      <a class="nav__item" href="03-feed.html"><i class="ic ic-20 ic-sparkle"></i>Альфа-Инсайт<span class="nav__new">Новое</span></a>
+    </div>
+  </nav>
+
+  <main class="app-main">
+    <div class="stack" style="max-width:var(--layout-content-max);gap:var(--space-6)">
+      <div>
+        <h1 class="t-h1">Доброе утро, Анна</h1>
+        <p class="t-small c-3" style="margin-top:4px">Среда, 21 октября · данные на 08:30 МСК</p>
+      </div>
+
+      <!-- Точка входа: заметная карточка на главной -->
+      <section class="card widget" aria-labelledby="widget-title">
+        <div class="widget__head">
+          <span class="ai-mark"><i class="ic ic-sparkle"></i></span>
+          <div class="grow">
+            <h2 id="widget-title" class="t-h2">Что влияет на ваш бизнес сегодня</h2>
+            <p class="t-small c-2" style="margin-top:2px">3 из 12 событий отобраны для «Восток-Металл» по профилю компании, связям в группе и аналитике Альфа-Банка</p>
+          </div>
+          <span class="t-caption c-3 d-only">Обновлено в 08:30</span>
+        </div>
+        <ul class="widget__list">
+          <li><a class="widget__row is-hover" href="04-insight.html">
+            <span><span class="tag tag--risk"><i class="ic ic-risk"></i>Риск</span></span>
+            <span>
+              <span class="t-strong" style="display:block">Банк России повысил ключевую ставку до 18%</span>
+              <span class="why"><span>Кредиты 9,2 млрд ₽ с плавающей ставкой → <b>≈ +92 млн ₽ в год</b> к процентным расходам</span></span>
+            </span>
+            <span class="meter meter--high"><span class="meter__bars"><i></i><i></i><i></i></span>Высокая</span>
+            <i class="ic ic-right"></i>
+          </a></li>
+          <li><a class="widget__row" href="04-insight.html">
+            <span><span class="tag tag--opportunity"><i class="ic ic-opp"></i>Возможность</span></span>
+            <span>
+              <span class="t-strong" style="display:block">Экспортные пошлины на металлопродукцию не продлят на 2027 год</span>
+              <span class="why"><span>58% выручки — экспорт → <b>маржа экспортных контрактов может вырасти</b></span></span>
+            </span>
+            <span class="meter meter--mid"><span class="meter__bars"><i></i><i></i><i></i></span>Средняя</span>
+            <i class="ic ic-right"></i>
+          </a></li>
+          <li><a class="widget__row" href="04-insight.html">
+            <span><span class="tag tag--risk"><i class="ic ic-risk"></i>Риск</span></span>
+            <span>
+              <span class="t-strong" style="display:block">Поставщику угля «Кокс-Трейд» предъявлен иск о банкротстве</span>
+              <span class="why"><span>Связь через платежи: <b>7% закупок</b> за 12 месяцев → риск срыва поставок</span></span>
+            </span>
+            <span class="meter meter--mid"><span class="meter__bars"><i></i><i></i><i></i></span>Средняя</span>
+            <i class="ic ic-right"></i>
+          </a></li>
+        </ul>
+        <div class="widget__foot">
+          <a class="btn btn--primary btn--sm" href="03-feed.html">Открыть ленту · 12 событий</a>
+          <a class="btn btn--ghost btn--sm d-only" href="#">Как мы отбираем события</a>
+          <span class="spacer"></span>
+          <span class="t-caption c-3 d-only">Источники: новости, аналитика Альфа-Банка, данные о компании</span>
+        </div>
+      </section>
+
+      <!-- Профиль компании: только данные, которые есть в CSV (GET /clients/{id}/profile). Счета и платежи не показываем — review krchvl в !1 -->
+      <section class="card card--pad profile profile--row" aria-labelledby="profile-title">
+        <div class="row" style="margin-bottom:var(--space-4)">
+          <h2 id="profile-title" class="section-title grow" style="margin:0"><i class="ic ic-20 ic-building"></i>Профиль компании</h2>
+          <span class="t-caption c-3 d-only">По этим данным Альфа-Инсайт отбирает события</span>
+        </div>
+        <dl>
+          <div><dt>Отрасль</dt><dd>Металлургия · ОКВЭД 24.10 <span class="badge badge--fact"><i class="ic ic-fact"></i>Факт</span></dd></div>
+          <div><dt>Выручка</dt><dd>≈ 128 млрд ₽ · топ-5% отрасли <span class="badge badge--estimate"><i class="ic ic-approx"></i>Оценка</span></dd></div>
+          <div><dt>Экспорт</dt><dd>58% выручки <span class="badge badge--fact"><i class="ic ic-fact"></i>Факт</span></dd></div>
+          <div><dt>Кредиты в Альфа-Банке</dt><dd>9,2 млрд ₽, плавающая ставка <span class="badge badge--fact"><i class="ic ic-fact"></i>Факт</span></dd></div>
+          <div><dt>Регионы</dt><dd>Урал, Поволжье</dd></div>
+          <div><dt>Группа и связи</dt><dd>4 компании · 12 ключевых контрагентов</dd></div>
+        </dl>
+      </section>
+    </div>
+  </main>
+</div>
+</body>
+</html>

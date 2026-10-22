@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>06 · Trace и feedback — Альфа-Инсайт</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="assets/screens.css">
+</head>
+<body>
+<!-- Маршрут: /insight/[id] + панель trace (deep link: /trace/[runId]) · API: GET /runs/{id}, POST /feedback -->
+<div class="app has-panel">
+  <header class="app-header">
+    <button class="icon-btn m-only" aria-label="Назад"><i class="ic ic-20 ic-back"></i></button>
+    <a class="brand" href="02-home.html"><span class="brand__mark" aria-hidden="true"></span><span class="brand__name">Альфа-Бизнес</span></a>
+    <span class="proto">Прототип · демо-данные</span>
+    <button class="switcher" aria-haspopup="listbox" aria-label="Компания: Восток-Металл">
+      <i class="ic ic-20 ic-building"></i>
+      <span class="grow"><span class="switcher__name">Восток-Металл</span><span class="switcher__meta">ИНН •••• 4417 · 4 компании в группе</span></span>
+      <i class="ic ic-down"></i>
+    </button>
+    <span class="spacer"></span>
+    <button class="icon-btn" aria-label="Уведомления"><i class="ic ic-20 ic-bell"></i><span class="dot"></span></button>
+    <div class="user"><span class="avatar">АК</span><span class="user__meta"><span class="user__name">Анна Ковалёва</span><span class="user__role">Финансовый директор</span></span></div>
+  </header>
+
+  <nav class="app-nav" aria-label="Разделы">
+    <div class="nav">
+      <a class="nav__item" href="02-home.html"><i class="ic ic-20 ic-home"></i>Главная</a>
+      <a class="nav__item is-active" href="03-feed.html" aria-current="page"><i class="ic ic-20 ic-sparkle"></i>Альфа-Инсайт<span class="nav__new">Новое</span></a>
+    </div>
+  </nav>
+
+  <main class="app-main">
+    <div class="insight">
+      <article class="insight__main">
+        <section class="card block" aria-labelledby="b6-t">
+          <div class="block__head"><span class="block__n">6</span><div><h2 id="b6-t" class="block__title">На чём основан вывод</h2><p class="block__q">Источники, данные о компании и шаги агента</p></div></div>
+          <ol class="sources">
+            <li><span class="src">1</span><i class="ic ic-news"></i><span><span class="t-small" style="font-weight:600;display:block">Банк России повысил ключевую ставку до 18%</span><span class="t-caption c-3">Пресс-релиз · 20 октября</span></span><a class="t-small" href="#">Открыть</a></li>
+            <li><span class="src">2</span><i class="ic ic-news"></i><span><span class="t-small" style="font-weight:600;display:block">Решение ЦБ стало неожиданностью для рынка</span><span class="t-caption c-3">Деловая пресса · 20 октября</span></span><a class="t-small" href="#">Открыть</a></li>
+            <li><span class="src">3</span><i class="ic ic-db"></i><span><span class="t-small" style="font-weight:600;display:block">Профиль компании: кредитный портфель и отчётность</span><span class="t-caption c-3">Данные банка · на 1 октября</span></span><a class="t-small" href="#">Открыть</a></li>
+            <li><span class="src">4</span><i class="ic ic-doc"></i><span><span class="t-small" style="font-weight:600;display:block">Макроэкономический обзор, октябрь 2026</span><span class="t-caption c-3">Аналитика Альфа-Банка · стр. 7</span></span><a class="t-small" href="#">Открыть</a></li>
+          </ol>
+          <div class="run-summary">
+            <i class="ic ic-20 ic-trace c-2"></i>
+            <span class="grow"><span class="t-small" style="font-weight:600;display:block">Агент: 9 шагов · 4 инструмента · 1 исправление после самопроверки</span><span class="t-caption c-3">12,4 с · 18 430 токенов · уверенность 0,82</span></span>
+            <a class="btn btn--secondary btn--sm is-active" href="#" aria-pressed="true">Как получен вывод</a>
+          </div>
+        </section>
+
+        <!-- Feedback: выбран «Нет», раскрыты причины -->
+        <section class="card feedback" aria-labelledby="fb-t">
+          <div class="feedback__row">
+            <h2 id="fb-t" class="t-h3 grow">Полезен ли этот инсайт?</h2>
+            <button class="vote"><i class="ic ic-up"></i>Да</button>
+            <button class="vote is-selected" aria-pressed="true"><i class="ic ic-downvote"></i>Нет</button>
+          </div>
+          <div>
+            <p class="t-small" style="font-weight:600;margin-bottom:var(--space-2)">Что не так?</p>
+            <div class="chips" role="radiogroup" aria-label="Причина">
+              <button class="chip" role="radio">Не про нашу компанию</button>
+              <button class="chip" role="radio">Ошибка в фактах</button>
+              <button class="chip is-selected" role="radio" aria-checked="true">Неточная позиция банка</button>
+              <button class="chip" role="radio">Другое</button>
+            </div>
+          </div>
+          <div>
+            <label class="t-small" style="font-weight:600;display:block;margin-bottom:var(--space-2)" for="fb-comment">Комментарий <span class="c-3" style="font-weight:400">— необязательно</span></label>
+            <textarea id="fb-comment" class="field is-focus" rows="3">Цитата из обзора за сентябрь, а не за октябрь</textarea>
+          </div>
+          <div class="row">
+            <button class="btn btn--primary btn--sm">Отправить</button>
+            <button class="btn btn--ghost btn--sm">Отмена</button>
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <div class="scrim m-only"></div>
+  <aside class="panel" aria-labelledby="trace-title">
+    <div class="panel__head">
+      <i class="ic ic-20 ic-trace c-2"></i>
+      <div class="grow"><h2 id="trace-title" class="panel__title">Как получен вывод</h2><p class="t-caption c-3">Шаги агента, инструменты и источники</p></div>
+      <button class="icon-btn icon-btn--sm" aria-label="Закрыть"><i class="ic ic-20 ic-x"></i></button>
+    </div>
+
+    <div class="panel__body">
+      <dl class="stats" style="margin:0">
+        <div><dt>Шаги</dt><dd>9</dd></div>
+        <div><dt>Время</dt><dd>12,4 с</dd></div>
+        <div><dt>Токены</dt><dd>18 430</dd></div>
+        <div><dt>Стоимость</dt><dd>3,2 ₽</dd></div>
+      </dl>
+      <div class="kv-line">
+        <span class="row" style="color:var(--color-opportunity);font-weight:600"><i class="ic ic-ok"></i>Успешно</span>
+        <span>run <code>run_7f3a91c2</code></span>
+        <span>модель <code>z-ai/glm-5.3-flash</code></span>
+      </div>
+
+      <ol class="tl">
+        <li class="tl__step is-ok"><span class="tl__icon"><i class="ic ic-ok"></i></span><div>
+          <div class="tl__head"><span class="tl__name">План</span><span class="tl__ms">0,9 с</span></div>
+          <p class="tl__note">Нужны: кредиты и профиль компании, детали решения ЦБ, позиция банка по ставке</p>
+        </div></li>
+        <li class="tl__step is-ok"><span class="tl__icon"><i class="ic ic-ok"></i></span><div>
+          <div class="tl__head"><span class="tl__name">Инструмент</span><code class="code">get_company_profile</code><span class="tl__ms">120 мс</span></div>
+          <div class="tl__body"><span><b>Вход:</b> client_id = demo-metal</span><span><b>Выход:</b> ОКВЭД 24.10, кредиты 9,2 млрд ₽ (плавающая), экспорт 58%</span></div>
+        </div></li>
+        <li class="tl__step is-ok"><span class="tl__icon"><i class="ic ic-ok"></i></span><div>
+          <div class="tl__head"><span class="tl__name">Инструмент</span><code class="code">get_group_graph</code><span class="tl__ms">210 мс</span></div>
+          <div class="tl__body"><span><b>Выход:</b> 4 компании группы, 12 контрагентов; прямой связи с событием нет</span></div>
+        </div></li>
+        <li class="tl__step is-ok"><span class="tl__icon"><i class="ic ic-ok"></i></span><div>
+          <div class="tl__head"><span class="tl__name">Инструмент</span><code class="code">search_news</code><span class="tl__ms">640 мс</span></div>
+          <div class="tl__body"><span><b>Вход:</b> «ключевая ставка 20 октября»</span><span><b>Выход:</b> 3 новости, 1 дубль удалён → источники 1, 2</span></div>
+        </div></li>
+        <li class="tl__step is-ok"><span class="tl__icon"><i class="ic ic-ok"></i></span><div>
+          <div class="tl__head"><span class="tl__name">Инструмент</span><code class="code">search_bank_analytics</code><span class="tl__ms">820 мс</span></div>
+          <div class="tl__body"><span><b>Вход:</b> «прогноз ставки, хеджирование»</span><span><b>Выход:</b> 2 фрагмента: Макрообзор стр. 7, Долговой рынок стр. 3 → источник 4</span></div>
+        </div></li>
+        <li class="tl__step is-ok"><span class="tl__icon"><i class="ic ic-ok"></i></span><div>
+          <div class="tl__head"><span class="tl__name">Черновик</span><span class="tl__ms">4,1 с</span></div>
+          <p class="tl__note">6 блоков, 11 тезисов, у каждого — ссылка на источник</p>
+        </div></li>
+        <li class="tl__step is-warn"><span class="tl__icon"><i class="ic ic-warn"></i></span><div>
+          <div class="tl__head"><span class="tl__name">Самопроверка</span><span class="tl__ms">2,3 с</span></div>
+          <div class="tl__body" style="background:var(--color-warning-subtle)"><span>Сумма процентных расходов не сходится с профилем → отправлено на исправление</span><span>2 тезиса без прямого источника → помечены «Вывод AI»</span></div>
+        </div></li>
+        <li class="tl__step is-ok"><span class="tl__icon"><i class="ic ic-ok"></i></span><div>
+          <div class="tl__head"><span class="tl__name">Исправление · 1 из 2</span><span class="tl__ms">1,9 с</span></div>
+          <p class="tl__note">Пересчитана оценка +92 млн ₽; добавлено ограничение про график погашения</p>
+        </div></li>
+        <li class="tl__step is-ok"><span class="tl__icon"><i class="ic ic-ok"></i></span><div>
+          <div class="tl__head"><span class="tl__name">Финал</span><span class="tl__ms">0,2 с</span></div>
+          <p class="tl__note">Схема валидна · покрытие ссылками 100% · уверенность 0,82</p>
+        </div></li>
+      </ol>
+    </div>
+
+    <div class="panel__foot">
+      <a class="btn btn--secondary btn--sm btn--block" href="#"><i class="ic ic-external"></i>Открыть на отдельной странице</a>
+    </div>
+  </aside>
+</div>
+</body>
+</html>

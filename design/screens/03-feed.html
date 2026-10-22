@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>03 · Лента — Альфа-Инсайт</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="assets/screens.css">
+</head>
+<body>
+<!-- Маршрут: /feed · API: GET /clients/{id}/feed?impact=all&sort=rank, GET /clients/{id}/profile -->
+<div class="app">
+  <header class="app-header">
+    <button class="icon-btn m-only" aria-label="Меню"><i class="ic ic-20 ic-menu"></i></button>
+    <a class="brand" href="02-home.html"><span class="brand__mark" aria-hidden="true"></span><span class="brand__name">Альфа-Бизнес</span></a>
+    <span class="proto">Прототип · демо-данные</span>
+    <button class="switcher" aria-haspopup="listbox" aria-label="Компания: Восток-Металл">
+      <i class="ic ic-20 ic-building"></i>
+      <span class="grow"><span class="switcher__name">Восток-Металл</span><span class="switcher__meta">ИНН •••• 4417 · 4 компании в группе</span></span>
+      <i class="ic ic-down"></i>
+    </button>
+    <span class="spacer"></span>
+    <button class="icon-btn" aria-label="Уведомления"><i class="ic ic-20 ic-bell"></i><span class="dot"></span></button>
+    <div class="user"><span class="avatar">АК</span><span class="user__meta"><span class="user__name">Анна Ковалёва</span><span class="user__role">Финансовый директор</span></span></div>
+  </header>
+
+  <nav class="app-nav" aria-label="Разделы">
+    <div class="nav">
+      <a class="nav__item" href="02-home.html"><i class="ic ic-20 ic-home"></i>Главная</a>
+      <a class="nav__item is-active" href="03-feed.html" aria-current="page"><i class="ic ic-20 ic-sparkle"></i>Альфа-Инсайт<span class="nav__new">Новое</span></a>
+    </div>
+  </nav>
+
+  <main class="app-main">
+    <div class="page-head" style="max-width:var(--layout-content-max)">
+      <span class="ai-mark"><i class="ic ic-sparkle"></i></span>
+      <div class="grow">
+        <h1 class="t-h1">Альфа-Инсайт</h1>
+        <p class="t-small c-2">События, которые влияют на «Восток-Металл»</p>
+      </div>
+      <span class="t-caption c-3 d-only">Обновлено в 08:30</span>
+      <button class="btn btn--secondary btn--sm" aria-label="Обновить ленту"><i class="ic ic-refresh"></i><span class="d-only">Обновить</span></button>
+    </div>
+
+    <div class="feed-layout">
+      <section aria-label="Лента событий">
+        <div class="toolbar">
+          <div class="tabs" role="tablist" aria-label="Влияние">
+            <button class="tabs__item is-active" role="tab" aria-selected="true">Все <span class="tabs__count">12</span></button>
+            <button class="tabs__item" role="tab">Риски <span class="tabs__count">5</span></button>
+            <button class="tabs__item" role="tab">Возможности <span class="tabs__count">4</span></button>
+            <button class="tabs__item" role="tab">Нейтральные <span class="tabs__count">3</span></button>
+          </div>
+          <span class="spacer"></span>
+          <button class="chip"><i class="ic ic-sort"></i>По значимости<i class="ic ic-down"></i></button>
+        </div>
+
+        <div class="stack">
+          <a class="card card--link event is-unread is-hover" href="04-insight.html">
+            <div class="event__top">
+              <span class="tag tag--risk"><i class="ic ic-risk"></i>Риск</span>
+              <span class="chip chip--type">Ключевая ставка</span>
+              <span class="sr-only">Не прочитано</span>
+              <span class="event__time">08:12</span>
+            </div>
+            <h2 class="event__title">Банк России повысил ключевую ставку до 18% годовых</h2>
+            <p class="why"><i class="ic ic-target"></i><span>Почему в ленте: <b>кредиты 9,2 млрд ₽ с плавающей ставкой</b> (КС + 2,5 п.п.) — процентные расходы вырастут уже в следующем периоде</span></p>
+            <div class="event__foot">
+              <span class="row"><i class="ic ic-news"></i>Банк России · пресс-релиз</span>
+              <span class="badge badge--bank"><i class="ic ic-quote"></i>Есть позиция банка</span>
+              <span class="meter meter--high"><span class="meter__bars"><i></i><i></i><i></i></span>Уверенность: высокая</span>
+            </div>
+          </a>
+
+          <a class="card card--link event is-unread" href="04-insight.html">
+            <div class="event__top">
+              <span class="tag tag--opportunity"><i class="ic ic-opp"></i>Возможность</span>
+              <span class="chip chip--type">Пошлины</span>
+              <span class="sr-only">Не прочитано</span>
+              <span class="event__time">07:40</span>
+            </div>
+            <h2 class="event__title">Правительство не будет продлевать экспортные пошлины на металлопродукцию в 2027 году</h2>
+            <p class="why"><i class="ic ic-target"></i><span>Почему в ленте: <b>58% выручки — экспорт</b> по данным ФТС — маржа экспортных контрактов может вырасти</span></p>
+            <div class="event__foot">
+              <span class="row"><i class="ic ic-news"></i>Деловая пресса</span>
+              <span class="badge badge--bank"><i class="ic ic-quote"></i>Есть позиция банка</span>
+              <span class="meter meter--mid"><span class="meter__bars"><i></i><i></i><i></i></span>Уверенность: средняя</span>
+            </div>
+          </a>
+
+          <!-- A1: новая новость, инсайт ещё готовится -->
+          <div class="card event" aria-busy="true">
+            <div class="event__top">
+              <span class="sk sk--pill"></span>
+              <span class="chip chip--type">Курс</span>
+              <span class="event__time">только что</span>
+            </div>
+            <h2 class="event__title">Рубль укрепился до 84 ₽ за доллар — максимум за три месяца</h2>
+            <p class="status-line"><span class="spinner"></span>Агент готовит инсайт · шаг 3 из 7 — ищет аналитику Альфа-Банка</p>
+            <div class="event__foot">
+              <span class="row"><i class="ic ic-news"></i>Итоги биржевых торгов</span>
+              <span class="sk" style="width:120px;margin-left:auto"></span>
+            </div>
+          </div>
+
+          <a class="card card--link event" href="04-insight.html">
+            <div class="event__top">
+              <span class="tag tag--risk"><i class="ic ic-risk"></i>Риск</span>
+              <span class="chip chip--type">Контрагент</span>
+              <span class="event__time">вчера, 19:05</span>
+            </div>
+            <h2 class="event__title">Поставщику коксующегося угля «Кокс-Трейд» предъявлен иск о банкротстве</h2>
+            <p class="why"><i class="ic ic-graph"></i><span>Почему в ленте: связь через платежи — <b>7% закупок</b> за 12 месяцев; риск срыва поставок сырья</span></p>
+            <div class="event__foot">
+              <span class="row"><i class="ic ic-news"></i>Картотека арбитражных дел</span>
+              <span class="meter meter--mid"><span class="meter__bars"><i></i><i></i><i></i></span>Уверенность: средняя</span>
+            </div>
+          </a>
+
+          <a class="card card--link event" href="04-insight.html">
+            <div class="event__top">
+              <span class="tag tag--neutral"><i class="ic ic-minus"></i>Нейтрально</span>
+              <span class="chip chip--type">Регулирование</span>
+              <span class="event__time">20 октября</span>
+            </div>
+            <h2 class="event__title">Минпромторг обсуждает новые требования к локализации металлоконструкций</h2>
+            <p class="why"><i class="ic ic-target"></i><span>Почему в ленте: <b>ОКВЭД 24.10</b> — прямого влияния пока нет, проект на обсуждении</span></p>
+            <div class="event__foot">
+              <span class="row"><i class="ic ic-news"></i>Отраслевой портал</span>
+              <span class="meter meter--low"><span class="meter__bars"><i></i><i></i><i></i></span>Уверенность: низкая</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <aside class="card card--pad profile" aria-labelledby="profile-title">
+        <h2 id="profile-title" class="section-title"><i class="ic ic-20 ic-building"></i>Профиль компании</h2>
+        <p class="t-small c-3" style="margin:-4px 0 var(--space-4)">По этим признакам отобраны события</p>
+        <dl>
+          <div><dt>Отрасль</dt><dd>Металлургия · ОКВЭД 24.10 <span class="badge badge--fact"><i class="ic ic-fact"></i>Факт</span></dd></div>
+          <div><dt>Выручка</dt><dd>≈ 128 млрд ₽ · топ-5% отрасли <span class="badge badge--estimate"><i class="ic ic-approx"></i>Оценка</span></dd></div>
+          <div><dt>Экспорт</dt><dd>58% выручки · Азия, Ближний Восток <span class="badge badge--fact"><i class="ic ic-fact"></i>Факт</span></dd></div>
+          <div><dt>Кредиты в Альфа-Банке</dt><dd>9,2 млрд ₽, плавающая ставка <span class="badge badge--fact"><i class="ic ic-fact"></i>Факт</span></dd></div>
+          <div><dt>Регионы</dt><dd>Урал, Поволжье</dd></div>
+          <div><dt>Группа и связи</dt><dd>4 компании · 12 ключевых контрагентов</dd></div>
+        </dl>
+        <a class="btn btn--ghost btn--sm" href="#" style="margin:var(--space-4) 0 0 calc(var(--space-4) * -1)"><i class="ic ic-help"></i>Как формируется лента</a>
+      </aside>
+    </div>
+  </main>
+</div>
+</body>
+</html>
